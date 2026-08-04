@@ -1582,19 +1582,24 @@ img {
 
 .reviews-carousel-wrapper {
   position: relative;
-  max-width: 900px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 3.5rem;
 }
 
 .reviews-slider {
-  display: flex;
-  overflow: hidden;
-  scroll-behavior: smooth;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-color);
-  background: #FFF;
-  box-shadow: var(--shadow-md);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  width: 100%;
+}
+
+.reviews-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .review-slide {
