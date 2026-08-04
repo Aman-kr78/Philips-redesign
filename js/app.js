@@ -571,16 +571,39 @@ class PhilipsApp {
     window.open(`https://wa.me/919876543210?text=${encoded}`, '_blank');
   }
 
+  // Source Logo Helper
+  getSourceLogoHtml(source) {
+    if (source === 'google') {
+      return `<img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google" style="height: 22px; width: 70px; display: block; object-fit: contain; flex-shrink: 0;">`;
+    } else if (source === 'amazon') {
+      return `<span style="font-weight: 900; font-size: 1.25rem; color: #111111; font-family: system-ui, -apple-system, sans-serif; letter-spacing: -0.5px; display: inline-flex; align-items: center; flex-shrink: 0;">amazon</span>`;
+    } else if (source === 'webmd') {
+      return `<span style="font-weight: 800; font-size: 1.35rem; color: #0077C8; font-family: Georgia, serif; font-style: italic; display: inline-flex; align-items: center; flex-shrink: 0;">WebMD</span>`;
+    } else if (source === 'trustpilot') {
+      return `<span style="font-weight: 800; font-size: 1.05rem; color: #00B67A; display: inline-flex; align-items: center; gap: 4px; flex-shrink: 0;"><i class="fa-solid fa-star" style="color: #00B67A; font-size: 0.9rem;"></i> Trustpilot</span>`;
+    } else if (source === 'facebook') {
+      return `<span style="font-weight: 800; font-size: 1.15rem; color: #1877F2; display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0;"><i class="fa-brands fa-facebook" style="font-size: 1.25rem;"></i> Facebook</span>`;
+    }
+    return `<img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google" style="height: 22px; width: 70px; display: block; object-fit: contain; flex-shrink: 0;">`;
+  }
+
+  getVisibleCardCount() {
+    if (window.innerWidth < 768) return 1;
+    if (window.innerWidth < 1200) return 2;
+    return 3;
+  }
+
   // Reviews Carousel Auto-play Slideshow
   renderReviews() {
     this.goToReview(0, false);
+    this.setupReviewsSwipeAndKeyboard();
   }
 
   startReviewsAutoPlay() {
     if (this.reviewTimer) clearInterval(this.reviewTimer);
     this.reviewTimer = setInterval(() => {
       this.nextReview(false);
-    }, 4000);
+    }, 5000);
   }
 
   goToReview(index, resetTimer = true) {
@@ -588,61 +611,77 @@ class PhilipsApp {
     const total = PHILIPS_DATA.reviews.length;
     if (!total) return;
 
-    // Get 3 consecutive reviews starting at index
-    const reviewsToShow = [
-      PHILIPS_DATA.reviews[index % total],
-      PHILIPS_DATA.reviews[(index + 1) % total],
-      PHILIPS_DATA.reviews[(index + 2) % total]
-    ];
+    const count = this.getVisibleCardCount();
+    const reviewsToShow = [];
+    for (let i = 0; i < count; i++) {
+      reviewsToShow.push(PHILIPS_DATA.reviews[(index + i) % total]);
+    }
 
     const slider = document.getElementById('reviews-slider');
     if (slider) {
-      slider.innerHTML = `
-        <div class="reviews-grid-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; width: 100%;">
-          ${reviewsToShow.map((rev) => `
-            <div class="review-card" style="background: #FFFFFF; border-radius: 20px; border: 1px solid #E2E8F0; box-shadow: 0 10px 30px rgba(0,0,0,0.04); padding: 1.85rem; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; opacity: 0;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 18px 36px rgba(0,87,184,0.12)'; this.style.borderColor='#0057B8';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.04)'; this.style.borderColor='#E2E8F0';">
-              <div>
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-                  <div style="display: flex; align-items: center; gap: 0.85rem;">
-                    <div style="width: 48px; height: 48px; border-radius: 50%; background: ${rev.color}; color: ${rev.textColor || '#FFF'}; font-weight: 800; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                      ${rev.avatar}
-                    </div>
-                    <div>
-                      <h4 style="font-size: 1.05rem; font-weight: 800; color: #1E293B; margin: 0 0 0.15rem 0;">${rev.author}</h4>
-                      <span style="font-size: 0.8rem; color: #94A3B8; font-weight: 500;">${rev.meta}</span>
-                    </div>
-                  </div>
-                  <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google" style="height: 20px; width: 62px; display: block; object-fit: contain; flex-shrink: 0;">
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 0.25rem; margin-bottom: 1rem; color: #F59E0B; font-size: 0.95rem;">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <span style="color: #94A3B8; font-size: 0.8rem; font-weight: 500; margin-left: 0.35rem;">· ${rev.date}</span>
-                </div>
-
-                <p style="font-size: 0.95rem; color: #334155; line-height: 1.6; font-style: italic; margin: 0; font-weight: 500;">
-                  "${rev.text}"
-                </p>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      `;
+      const oldGrid = slider.querySelector('.reviews-grid-container');
+      if (oldGrid) {
+        oldGrid.style.opacity = '0';
+        oldGrid.style.transform = 'translateX(-12px)';
+      }
 
       setTimeout(() => {
-        const cards = slider.querySelectorAll('.review-card');
-        cards.forEach(c => c.style.opacity = '1');
-      }, 30);
+        slider.innerHTML = `
+          <div class="reviews-grid-container" style="display: grid; grid-template-columns: repeat(${count}, 1fr); gap: 24px; width: 100%; transition: transform 450ms ease-in-out, opacity 450ms ease-in-out; opacity: 0; transform: translateX(12px);">
+            ${reviewsToShow.map((rev) => `
+              <div class="review-card">
+                <div>
+                  <!-- Top Row -->
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.15rem;">
+                    <div style="display: flex; align-items: center; gap: 0.9rem;">
+                      <div style="width: 52px; height: 52px; border-radius: 50%; background: #0066CC; color: #FFFFFF; font-weight: 800; font-size: 1.25rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        ${rev.avatar}
+                      </div>
+                      <div>
+                        <h4 style="font-size: 22px; font-weight: 800; color: #1E293B; margin: 0 0 0.15rem 0; line-height: 1.2;">${rev.author}</h4>
+                        <span style="font-size: 16px; color: #94A3B8; font-weight: 500; display: block;">${rev.meta}</span>
+                      </div>
+                    </div>
+                    ${this.getSourceLogoHtml(rev.source)}
+                  </div>
+
+                  <!-- Second Row -->
+                  <div style="display: flex; align-items: center; gap: 0.3rem; margin-bottom: 1.1rem; color: #F59E0B; font-size: 1.1rem;">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span style="color: #94A3B8; font-size: 15px; font-weight: 500; margin-left: 0.4rem;">· ${rev.date}</span>
+                  </div>
+
+                  <!-- Third Row: Light Divider -->
+                  <div style="border-bottom: 1px solid #F1F5F9; margin-bottom: 1.15rem;"></div>
+
+                  <!-- Fourth Row: Review Text -->
+                  <p style="font-size: 18px; color: #334155; line-height: 1.65; font-style: italic; margin: 0; font-weight: 500;">
+                    "${rev.text}"
+                  </p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+
+        requestAnimationFrame(() => {
+          const newGrid = slider.querySelector('.reviews-grid-container');
+          if (newGrid) {
+            newGrid.style.opacity = '1';
+            newGrid.style.transform = 'translateX(0)';
+          }
+        });
+      }, 50);
     }
 
     const dotsContainer = document.getElementById('reviews-dots');
     if (dotsContainer) {
       dotsContainer.innerHTML = PHILIPS_DATA.reviews.map((_, idx) => `
-        <span class="dot ${idx === index ? 'active' : ''}" onclick="app.goToReview(${idx})" style="${idx === index ? 'width: 24px; height: 10px; border-radius: 999px; background: #0057B8;' : 'width: 10px; height: 10px; border-radius: 50%; background: #CBD5E1;'} cursor: pointer; transition: all 0.3s ease;"></span>
+        <span class="dot ${idx === index ? 'active' : ''}" onclick="app.goToReview(${idx})" aria-label="Go to testimonial ${idx + 1}" style="${idx === index ? 'width: 28px; height: 10px; border-radius: 999px; background: #0066CC;' : 'width: 10px; height: 10px; border-radius: 50%; background: #CBD5E1;'} cursor: pointer; transition: all 300ms ease;"></span>
       `).join('');
     }
 
@@ -659,6 +698,43 @@ class PhilipsApp {
   prevReview(resetTimer = true) {
     this.currentReviewIndex = (this.currentReviewIndex - 1 + PHILIPS_DATA.reviews.length) % PHILIPS_DATA.reviews.length;
     this.goToReview(this.currentReviewIndex, resetTimer);
+  }
+
+  setupReviewsSwipeAndKeyboard() {
+    const wrapper = document.querySelector('.reviews-carousel-wrapper');
+    if (!wrapper) return;
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    wrapper.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    wrapper.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 40) {
+        this.nextReview();
+      } else if (touchEndX - touchStartX > 40) {
+        this.prevReview();
+      }
+    }, { passive: true });
+
+    wrapper.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        this.nextReview();
+      } else if (e.key === 'ArrowLeft') {
+        this.prevReview();
+      }
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        this.goToReview(this.currentReviewIndex, false);
+      }, 100);
+    });
   }
 
   // FAQs Accordion

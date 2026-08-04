@@ -861,51 +861,55 @@ const PHILIPS_DATA = {
       author: "Sarah Mitchell",
       meta: "Smart Home Enthusiast",
       avatar: "S",
-      color: "#0057B8",
+      color: "#0066CC",
       date: "Verified Review",
+      source: "google",
       text: "The Philips Smart Lighting completely transformed my living room. The setup was quick, the lighting quality is outstanding, and controlling everything from my phone is incredibly convenient."
+    },
+    {
+      author: "Rajesh Kumar",
+      meta: "Home Appliance User",
+      avatar: "R",
+      color: "#0066CC",
+      date: "Verified Review",
+      source: "amazon",
+      text: "Our Philips Air Fryer has made cooking healthier and easier. The build quality is excellent and it fits perfectly in our kitchen. Highly recommend Philips for quality and innovation!"
+    },
+    {
+      author: "Anita Joseph",
+      meta: "Healthcare Professional",
+      avatar: "A",
+      color: "#0066CC",
+      date: "Verified Review",
+      source: "webmd",
+      text: "Philips healthcare products are trustworthy and effective. I use their personal care devices daily and the results are always reliable and safe for my family."
     },
     {
       author: "David Carter",
       meta: "Homeowner",
       avatar: "D",
-      color: "#00AEEF",
-      textColor: "#071B3D",
+      color: "#0066CC",
       date: "Verified Review",
+      source: "trustpilot",
       text: "I purchased the Philips Air Purifier and Smart LED Bulbs together. Both products exceeded my expectations in quality, performance, and design. Highly recommended."
     },
     {
       author: "Emily Johnson",
       meta: "Interior Designer",
       avatar: "E",
-      color: "#8B5CF6",
+      color: "#0066CC",
       date: "Verified Review",
+      source: "google",
       text: "The lighting creates the perfect ambience for every room. Philips products combine elegant design with smart technology, making them ideal for modern homes."
-    },
-    {
-      author: "Michael Brown",
-      meta: "Verified Customer",
-      avatar: "M",
-      color: "#071B3D",
-      date: "Verified Review",
-      text: "The website made it very easy to compare products and place my order. Fast delivery, excellent customer support, and premium product quality."
     },
     {
       author: "Sophia Williams",
       meta: "Tech Professional",
       avatar: "S",
-      color: "#10B981",
+      color: "#0066CC",
       date: "Verified Review",
+      source: "facebook",
       text: "From smart lighting to personal care products, Philips has become my go-to brand. The products are reliable, beautifully designed, and work seamlessly together."
-    },
-    {
-      author: "Alex Rivera",
-      meta: "Smart Home Designer",
-      avatar: "A",
-      color: "#F59E0B",
-      textColor: "#FFFFFF",
-      date: "Verified Review",
-      text: "The build quality and seamless app integration of Philips Hue lights are unmatched. Creating custom lighting scenes for movie nights and dining is effortless."
     }
   ],
 

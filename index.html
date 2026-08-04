@@ -1056,15 +1056,15 @@
   </section>
 
   <!-- 8. Verified Customer Testimonials Section -->
-  <section class="reviews-section" id="reviews" style="background: #F8FAFC; padding: 5rem 0;">
-    <div class="container">
+  <section class="reviews-section" id="reviews" style="background: #F8FAFC; padding: 6rem 0; overflow: hidden;">
+    <div class="container" style="max-width: 1400px; padding: 0 1.5rem;">
       <div class="section-header reveal-on-scroll" style="text-align: center; margin-bottom: 3.5rem;">
-        <h2 class="section-title" style="font-size: 2.2rem; font-weight: 800; color: #1E293B; margin-bottom: 0.75rem;">What Our Customers Say</h2>
-        <p class="section-desc" style="color: #64748B; font-size: 1.05rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">Trusted by thousands of families worldwide for innovative lighting, home appliances, healthcare, and personal care solutions.</p>
+        <h2 class="section-title" style="font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 800; color: #1E293B; margin-bottom: 0.75rem; line-height: 1.15;">What Our Customers Say</h2>
+        <p class="section-desc" style="color: #64748B; font-size: 1.25rem; max-width: 850px; margin: 0 auto; line-height: 1.6; font-weight: 400;">Trusted by thousands of families worldwide for innovative lighting, home appliances, healthcare, and personal care solutions.</p>
       </div>
 
-      <div class="reviews-carousel-wrapper reveal-on-scroll" style="position: relative; max-width: 1240px; margin: 0 auto; padding: 0 3.5rem;">
-        <button class="reviews-nav-btn prev-btn" id="rev-prev" onclick="app.prevReview()" aria-label="Previous Review" style="position: absolute; left: 0; top: 45%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; border: 1px solid #E2E8F0; box-shadow: 0 4px 14px rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: #0057B8; cursor: pointer; z-index: 10;">
+      <div class="reviews-carousel-wrapper reveal-on-scroll" style="position: relative; max-width: 1360px; margin: 0 auto; padding: 0 3.5rem;" tabindex="0" aria-label="Customer Testimonials Carousel">
+        <button class="reviews-nav-btn prev-btn" id="rev-prev" onclick="app.prevReview()" aria-label="Previous Review" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: #FFFFFF; border: 1px solid #E8EDF5; box-shadow: 0 4px 14px rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: #0066CC; cursor: pointer; z-index: 10; transition: all 300ms ease;">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
         
@@ -1141,7 +1141,7 @@
           </div>
         </div>
         
-        <button class="reviews-nav-btn next-btn" id="rev-next" onclick="app.nextReview()" aria-label="Next Review" style="position: absolute; right: 0; top: 45%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; border: 1px solid #E2E8F0; box-shadow: 0 4px 14px rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: #0057B8; cursor: pointer; z-index: 10;">
+        <button class="reviews-nav-btn next-btn" id="rev-next" onclick="app.nextReview()" aria-label="Next Review" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: #FFFFFF; border: 1px solid #E8EDF5; box-shadow: 0 4px 14px rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: #0066CC; cursor: pointer; z-index: 10; transition: all 300ms ease;">
           <i class="fa-solid fa-chevron-right"></i>
         </button>
 
