@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Philips — Innovation & You | Official E-Commerce Store</title>
+  <meta name="description" content="Discover Philips smart home lighting, personal care shavers, air fryers, Sonicare oral care, and healthcare innovations with official 2-year warranty & doorstep delivery.">
+  
+  <!-- Preload & Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Philips | Innovation That Works For You">
+  <meta property="og:description" content="Official Philips E-Commerce Store — Smart Lighting, Personal Care, Air Fryers & Healthcare Innovations.">
+  <meta property="og:image" content="hero.png">
+  
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Alert Announcement Banner -->
+  <div class="alert-banner" id="announcement-banner">
+    <div class="alert-content">
+      <i class="fa-solid fa-bolt alert-icon"></i>
+      <span>Philips <strong>Innovation & You</strong> — Free Shipping Across India & 2-Year Warranty! Use code <strong class="promo-pill">PHILIPS10</strong> for Extra 10% OFF</span>
+    </div>
+    <button class="alert-close-btn" id="close-announcement" aria-label="Close Announcement" onclick="document.getElementById('announcement-banner').style.display='none'; sessionStorage.setItem('philips_banner_dismissed', 'true');">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <!-- Header Section -->
+  <div class="header-wrapper" id="header-wrapper">
+    <header class="main-header" id="site-header">
+    <div class="header-container">
+      <a href="#home" class="logo-area" aria-label="Philips Home">
+        <img src="images/philips_official_logo.png" alt="Philips" class="header-logo" style="width: auto; display: block; object-fit: contain;">
+      </a>
+      
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <!-- 1. Products Combined Mega Menu (Home Appliances, Healthcare, Personal Care) -->
+          <li class="nav-item-dropdown">
+            <a href="#bestsellers" class="nav-link" onclick="app.setSubcategoryFilter('all')">
+              Products <i class="fa-solid fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-dropdown" style="width: 720px; left: 50%; transform: translateX(-50%); padding: 0;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; padding: 1.5rem; background: #FFFFFF; border-radius: 12px;">
+                
+                <!-- Column 1: Home Appliances -->
+                <div>
+                  <div style="font-weight: 800; font-size: 0.85rem; color: #0057B8; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1.5px solid #E2E8F0; padding-bottom: 0.35rem;">
+                    <i class="fa-solid fa-house"></i> Home Appliances
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Light')" class="mega-sub-link"><i class="fa-solid fa-lightbulb"></i> Light</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Air Purifiers')" class="mega-sub-link"><i class="fa-solid fa-wind"></i> Air Purifiers</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Air Fryers')" class="mega-sub-link"><i class="fa-solid fa-utensils"></i> Air Fryers</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Kitchen Appliances')" class="mega-sub-link"><i class="fa-solid fa-blender"></i> Kitchen Appliances</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Irons & Steamers')" class="mega-sub-link"><i class="fa-solid fa-shirt"></i> Irons & Steamers</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Coffee Makers')" class="mega-sub-link"><i class="fa-solid fa-mug-hot"></i> Coffee Makers</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Vacuum Cleaners')" class="mega-sub-link"><i class="fa-solid fa-broom"></i> Vacuum Cleaners</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Water Solutions')" class="mega-sub-link"><i class="fa-solid fa-glass-water"></i> Water Solutions</a>
+                  </div>
+                </div>
+
+                <!-- Column 2: Healthcare -->
+                <div>
+                  <div style="font-weight: 800; font-size: 0.85rem; color: #0057B8; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1.5px solid #E2E8F0; padding-bottom: 0.35rem;">
+                    <i class="fa-solid fa-heart-pulse"></i> Healthcare
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Health Monitors')" class="mega-sub-link"><i class="fa-solid fa-notes-medical"></i> Health Monitors</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Personal Health')" class="mega-sub-link"><i class="fa-solid fa-heartbeat"></i> Personal Health</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Sleep & Respiratory')" class="mega-sub-link"><i class="fa-solid fa-lungs"></i> Sleep & Respiratory</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Health Devices')" class="mega-sub-link"><i class="fa-solid fa-laptop-medical"></i> Health Devices</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Therapy Devices')" class="mega-sub-link"><i class="fa-solid fa-kit-medical"></i> Therapy Devices</a>
+                  </div>
+                </div>
+
+                <!-- Column 3: Personal Care -->
+                <div>
+                  <div style="font-weight: 800; font-size: 0.85rem; color: #0057B8; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1.5px solid #E2E8F0; padding-bottom: 0.35rem;">
+                    <i class="fa-solid fa-user-tie"></i> Personal Care
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Men\'s Grooming')" class="mega-sub-link"><i class="fa-solid fa-user-ninja"></i> Men's Grooming</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Women\'s Grooming')" class="mega-sub-link"><i class="fa-solid fa-gem"></i> Women's Grooming</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Oral Care')" class="mega-sub-link"><i class="fa-solid fa-tooth"></i> Oral Care</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Hair Care')" class="mega-sub-link"><i class="fa-solid fa-scissors"></i> Hair Care</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Skin Care')" class="mega-sub-link"><i class="fa-solid fa-spa"></i> Skin Care</a>
+                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Shavers')" class="mega-sub-link"><i class="fa-solid fa-shield-halved"></i> Shavers</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+          <!-- 4. Support Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="#faq" class="nav-link">
+              Support <i class="fa-solid fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-dropdown" style="width: 380px;">
+              <div class="mega-dropdown-header">
+                <i class="fa-solid fa-headset" style="color: var(--primary-blue);"></i>
+                <span>Support Options</span>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns: 1fr;">
+                <a href="#faq" class="mega-sub-link"><i class="fa-solid fa-circle-question"></i> 1. FAQs</a>
+                <a href="#contact" class="mega-sub-link"><i class="fa-solid fa-envelope"></i> 2. Contact Us</a>
+                <a href="#" onclick="app.showSupportModal('Warranty')" class="mega-sub-link"><i class="fa-solid fa-shield"></i> 3. Warranty</a>
+                <a href="#" onclick="app.showSupportModal('Repairs')" class="mega-sub-link"><i class="fa-solid fa-wrench"></i> 4. Repairs</a>
+                <a href="#" onclick="app.showSupportModal('Manuals')" class="mega-sub-link"><i class="fa-solid fa-file-pdf"></i> 5. Manuals</a>
+                <a href="#faq" class="mega-sub-link"><i class="fa-solid fa-life-ring"></i> 6. Help Center</a>
+                <a href="#" onclick="app.showSupportModal('Track Order')" class="mega-sub-link"><i class="fa-solid fa-truck"></i> 7. Track Order</a>
+                <a href="#" onclick="app.showSupportModal('Product Registration')" class="mega-sub-link"><i class="fa-solid fa-barcode"></i> 8. Product Registration</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 5. Cart Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="#" onclick="app.openCartDrawer()" class="nav-link">
+              Cart <i class="fa-solid fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-dropdown" style="width: 360px;">
+              <div class="mega-dropdown-header">
+                <i class="fa-solid fa-cart-shopping" style="color: var(--primary-blue);"></i>
+                <span>Cart & Orders</span>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns: 1fr;">
+                <a href="#" onclick="app.openCartDrawer()" class="mega-sub-link"><i class="fa-solid fa-box"></i> 1. Orders</a>
+                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-heart"></i> 2. Wishlist</a>
+                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-location-dot"></i> 3. Addresses</a>
+                <a href="#" onclick="app.openCartDrawer()" class="mega-sub-link"><i class="fa-solid fa-credit-card"></i> 4. Payments</a>
+                <a href="#" onclick="app.openCartDrawer()" class="mega-sub-link"><i class="fa-solid fa-ticket"></i> 5. Promo Codes</a>
+                <a href="#" onclick="app.openCartDrawer()" class="mega-sub-link"><i class="fa-solid fa-receipt"></i> 6. Order Summary</a>
+                <a href="#" onclick="app.showSupportModal('Track Order')" class="mega-sub-link"><i class="fa-solid fa-truck-fast"></i> 7. Track Order</a>
+                <a href="#" onclick="app.showSupportModal('Returns & Refunds')" class="mega-sub-link"><i class="fa-solid fa-rotate-left"></i> 8. Returns & Refunds</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 6. Profile Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="#" onclick="app.openProfileModal()" class="nav-link">
+              Profile <i class="fa-solid fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-dropdown" style="width: 360px;">
+              <div class="mega-dropdown-header">
+                <i class="fa-solid fa-user-circle" style="color: var(--primary-blue);"></i>
+                <span>User Account & Profile</span>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns: 1fr;">
+                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-bag-shopping"></i> 1. Orders</a>
+                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-heart"></i> 2. Wishlist</a>
+                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-map-location-dot"></i> 3. Addresses</a>
+                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-gear"></i> 4. Settings</a>
+                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-address-card"></i> 5. Account Details</a>
+                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-bell"></i> 6. Notifications</a>
+                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-credit-card"></i> 7. Saved Cards</a>
+                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-right-from-bracket"></i> 8. Logout</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right Side Actions: Search, Cart, Profile -->
+      <div class="header-actions">
+        <button class="icon-trigger-btn" id="search-toggle" onclick="app.openSearchModal()" title="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="cart-trigger" id="cart-toggle" aria-label="Open Shopping Cart" title="Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge" id="cart-count">0</span>
+        </button>
+        <button class="account-trigger" id="account-toggle" onclick="app.openProfileModal()" aria-label="Open Profile" title="Profile">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle Mobile Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  </div>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-menu">
+    <div class="mobile-menu-content">
+      <button class="mobile-close-btn" id="mobile-menu-close" aria-label="Close Mobile Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <ul class="mobile-nav-links">
+        <li><a href="#bestsellers" class="mobile-nav-link" onclick="app.setParentCategoryFilter('Home Appliances')"><i class="fa-solid fa-house"></i> 1. Home Appliances</a></li>
+        <li><a href="#bestsellers" class="mobile-nav-link" onclick="app.setParentCategoryFilter('Healthcare')"><i class="fa-solid fa-heart-pulse"></i> 2. Healthcare</a></li>
+        <li><a href="#bestsellers" class="mobile-nav-link" onclick="app.setParentCategoryFilter('Personal Care')"><i class="fa-solid fa-user-tie"></i> 3. Personal Care</a></li>
+        <li><a href="#faq" class="mobile-nav-link"><i class="fa-solid fa-headset"></i> 4. Support</a></li>
+        <li><a href="#" class="mobile-nav-link" onclick="app.openCartDrawer()"><i class="fa-solid fa-cart-shopping"></i> 5. Cart</a></li>
+        <li><a href="#" class="mobile-nav-link" onclick="app.openProfileModal()"><i class="fa-solid fa-user"></i> 6. Profile</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 1. Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-headline reveal-on-scroll" data-delay="100">
+          A Website<br>That Works<br>for You
+        </h1>
+        <p class="hero-subtext reveal-on-scroll" data-delay="250">
+          Discover Philips innovations designed to make everyday life healthier, smarter, and more comfortable.
+        </p>
+        <a href="#shop-by-category" class="hero-btn-primary reveal-on-scroll" data-delay="400">
+          Explore Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Shop by Category Section (Information Architecture 16 Categories) -->
+  <section class="shop-section" id="shop-by-category" style="background: #F8FAFC;">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <h2 class="section-title">Shop by Category</h2>
+        <p class="section-desc">Explore products organized cleanly across Home Appliances, Healthcare, and Personal Care.</p>
+      </div>
+
+      <div class="ia-category-grid" id="ia-category-container">
+        <!-- 1. Light -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Light')">
+          <div class="ia-category-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <div class="ia-category-title">Light</div>
+          <div class="ia-category-parent">HOME APPLIANCES</div>
+        </a>
+
+        <!-- 2. Air Purifiers -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Air Purifiers')">
+          <div class="ia-category-icon"><i class="fa-solid fa-wind"></i></div>
+          <div class="ia-category-title">Air Purifiers</div>
+          <div class="ia-category-parent">HOME APPLIANCES</div>
+        </a>
+
+        <!-- 3. Air Fryers -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Air Fryers')">
+          <div class="ia-category-icon"><i class="fa-solid fa-utensils"></i></div>
+          <div class="ia-category-title">Air Fryers</div>
+          <div class="ia-category-parent">HOME APPLIANCES</div>
+        </a>
+
+        <!-- 4. Kitchen Appliances -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Kitchen Appliances')">
+          <div class="ia-category-icon"><i class="fa-solid fa-blender"></i></div>
+          <div class="ia-category-title">Kitchen Appliances</div>
+          <div class="ia-category-parent">HOME APPLIANCES</div>
+        </a>
+
+        <!-- 5. Irons & Steamers -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Irons & Steamers')">
+          <div class="ia-category-icon"><i class="fa-solid fa-shirt"></i></div>
+          <div class="ia-category-title">Irons & Steamers</div>
+          <div class="ia-category-parent">HOME APPLIANCES</div>
+        </a>
+
+        <!-- 6. Coffee Makers -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Coffee Makers')">
+          <div class="ia-category-icon"><i class="fa-solid fa-mug-hot"></i></div>
+          <div class="ia-category-title">Coffee Makers</div>
+          <div class="ia-category-parent">HOME APPLIANCES</div>
+        </a>
+
+        <!-- 7. Vacuum Cleaners -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Vacuum Cleaners')">
+          <div class="ia-category-icon"><i class="fa-solid fa-broom"></i></div>
+          <div class="ia-category-title">Vacuum Cleaners</div>
+          <div class="ia-category-parent">HOME APPLIANCES</div>
+        </a>
+
+        <!-- 8. Water Solutions -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Water Solutions')">
+          <div class="ia-category-icon"><i class="fa-solid fa-glass-water"></i></div>
+          <div class="ia-category-title">Water Solutions</div>
+          <div class="ia-category-parent">HOME APPLIANCES</div>
+        </a>
+
+        <!-- 9. Health Monitors -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Health Monitors')">
+          <div class="ia-category-icon"><i class="fa-solid fa-notes-medical"></i></div>
+          <div class="ia-category-title">Health Monitors</div>
+          <div class="ia-category-parent">HEALTHCARE</div>
+        </a>
+
+        <!-- 10. Personal Health -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Personal Health')">
+          <div class="ia-category-icon"><i class="fa-solid fa-heartbeat"></i></div>
+          <div class="ia-category-title">Personal Health</div>
+          <div class="ia-category-parent">HEALTHCARE</div>
+        </a>
+
+        <!-- 11. Men's Grooming -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Men\'s Grooming')">
+          <div class="ia-category-icon"><i class="fa-solid fa-user-ninja"></i></div>
+          <div class="ia-category-title">Men's Grooming</div>
+          <div class="ia-category-parent">PERSONAL CARE</div>
+        </a>
+
+        <!-- 12. Women's Grooming -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Women\'s Grooming')">
+          <div class="ia-category-icon"><i class="fa-solid fa-gem"></i></div>
+          <div class="ia-category-title">Women's Grooming</div>
+          <div class="ia-category-parent">PERSONAL CARE</div>
+        </a>
+
+        <!-- 13. Oral Care -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Oral Care')">
+          <div class="ia-category-icon"><i class="fa-solid fa-tooth"></i></div>
+          <div class="ia-category-title">Oral Care</div>
+          <div class="ia-category-parent">PERSONAL CARE</div>
+        </a>
+
+        <!-- 14. Hair Care -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Hair Care')">
+          <div class="ia-category-icon"><i class="fa-solid fa-scissors"></i></div>
+          <div class="ia-category-title">Hair Care</div>
+          <div class="ia-category-parent">PERSONAL CARE</div>
+        </a>
+
+        <!-- 15. Skin Care -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Skin Care')">
+          <div class="ia-category-icon"><i class="fa-solid fa-spa"></i></div>
+          <div class="ia-category-title">Skin Care</div>
+          <div class="ia-category-parent">PERSONAL CARE</div>
+        </a>
+
+        <!-- 16. Shavers -->
+        <a href="#bestsellers" class="ia-category-card" onclick="app.setSubcategoryFilter('Shavers')">
+          <div class="ia-category-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="ia-category-title">Shavers</div>
+          <div class="ia-category-parent">PERSONAL CARE</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Best Selling Products Section -->
+  <section class="shop-section" id="bestsellers" style="padding-top: 3.5rem;">
+    <div class="container">
+      <div class="section-header reveal-on-scroll" style="text-align: center; margin-bottom: 2.5rem;">
+        <span style="background: rgba(0, 87, 184, 0.08); color: #0057B8; font-weight: 800; font-size: 0.85rem; padding: 0.35rem 1rem; border-radius: 999px; display: inline-block; margin-bottom: 0.75rem; letter-spacing: 0.5px; text-transform: uppercase;">
+          <i class="fa-solid fa-fire" style="color: #FF6B00; margin-right: 0.35rem;"></i> Featured Range
+        </span>
+        <h2 class="section-title" style="font-size: 2.2rem; font-weight: 800; color: #1E293B; margin-bottom: 0.5rem;">Best Selling Products</h2>
+        <p class="section-desc" style="color: #64748B; font-size: 1.05rem; max-width: 600px; margin: 0 auto;">Discover top-rated official Philips innovations trusted by millions of homes.</p>
+      </div>
+
+      <!-- Bestseller Product Grid -->
+      <div class="product-grid" id="bestsellers-list">
+        <!-- 1. Hue Smart Bulb -->
+        <div class="product-card" data-product-id="hue-smart-bulb-rgb">
+          <span class="product-badge">Best Seller</span>
+          <span class="product-discount-badge">28% OFF</span>
+          <div class="product-image-wrap" onclick="app.openQuickView('hue-smart-bulb-rgb')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/smart_led_bulb_1785486508575.jpg" alt="Philips Hue Smart LED Bulb E27 Starter Kit" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">LIGHT</span>
+            <h3 class="product-title" onclick="app.openQuickView('hue-smart-bulb-rgb')" style="cursor: pointer;">Philips Hue Smart LED Bulb E27 Starter Kit</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.8</span><span class="rating-count">(342 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-hue-smart-bulb-rgb">₹2,499</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('hue-smart-bulb-rgb')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('hue-smart-bulb-rgb')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Air Purifier 3000i -->
+        <div class="product-card" data-product-id="air-purifier-3000i">
+          <div class="product-image-wrap" onclick="app.openQuickView('air-purifier-3000i')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/air_purifier_1785486550904.jpg" alt="Philips Air Purifier Series 3000i Dual Scan" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">AIR PURIFIERS</span>
+            <h3 class="product-title" onclick="app.openQuickView('air-purifier-3000i')" style="cursor: pointer;">Philips Air Purifier Series 3000i Dual Scan</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.8</span><span class="rating-count">(195 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-air-purifier-3000i">₹22,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('air-purifier-3000i')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('air-purifier-3000i')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Airfryer XXL -->
+        <div class="product-card" data-product-id="airfryer-xxl-digital">
+          <div class="product-image-wrap" onclick="app.openQuickView('airfryer-xxl-digital')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/air_fryer_1785486565523.jpg" alt="Philips Airfryer XXL Smart Sensing HD9860/90" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">AIR FRYERS</span>
+            <h3 class="product-title" onclick="app.openQuickView('airfryer-xxl-digital')" style="cursor: pointer;">Philips Airfryer XXL Smart Sensing HD9860/90</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.9</span><span class="rating-count">(512 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-airfryer-xxl-digital">₹18,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('airfryer-xxl-digital')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('airfryer-xxl-digital')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Food Processor -->
+        <div class="product-card" data-product-id="kitchen-master-processor">
+          <div class="product-image-wrap" onclick="app.openQuickView('kitchen-master-processor')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/food_processor_1785486581783.jpg" alt="Philips Viva Collection Food Processor & Mixer Grinder" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">KITCHEN APPLIANCES</span>
+            <h3 class="product-title" onclick="app.openQuickView('kitchen-master-processor')" style="cursor: pointer;">Philips Viva Collection Food Processor & Mixer Grinder</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.7</span><span class="rating-count">(215 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-kitchen-master-processor">₹8,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('kitchen-master-processor')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('kitchen-master-processor')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Garment Steamer -->
+        <div class="product-card" data-product-id="garment-steamer-series3000">
+          <div class="product-image-wrap" onclick="app.openQuickView('garment-steamer-series3000')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/garment_steamer_1785486595850.jpg" alt="Philips EasyTouch Stand Garment Steamer" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">IRONS & STEAMERS</span>
+            <h3 class="product-title" onclick="app.openQuickView('garment-steamer-series3000')" style="cursor: pointer;">Philips EasyTouch Stand Garment Steamer</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.7</span><span class="rating-count">(128 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-garment-steamer-series3000">₹6,499</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('garment-steamer-series3000')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('garment-steamer-series3000')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Espresso Machine -->
+        <div class="product-card" data-product-id="barista-espresso-maker">
+          <div class="product-image-wrap" onclick="app.openQuickView('barista-espresso-maker')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/espresso_machine_1785486609663.jpg" alt="Philips LatteGo 5400 Fully Automatic Espresso Machine" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">COFFEE MAKERS</span>
+            <h3 class="product-title" onclick="app.openQuickView('barista-espresso-maker')" style="cursor: pointer;">Philips LatteGo 5400 Fully Automatic Espresso Machine</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.9</span><span class="rating-count">(88 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-barista-espresso-maker">₹54,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('barista-espresso-maker')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('barista-espresso-maker')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. SpeedPro Vacuum -->
+        <div class="product-card" data-product-id="speedpro-cordless-vacuum">
+          <div class="product-image-wrap" onclick="app.openQuickView('speedpro-cordless-vacuum')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/stick_vacuum_1785486622668.jpg" alt="Philips SpeedPro Max Cordless Stick Vacuum Cleaner" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">VACUUM CLEANERS</span>
+            <h3 class="product-title" onclick="app.openQuickView('speedpro-cordless-vacuum')" style="cursor: pointer;">Philips SpeedPro Max Cordless Stick Vacuum Cleaner</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.8</span><span class="rating-count">(174 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-speedpro-cordless-vacuum">₹24,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('speedpro-cordless-vacuum')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('speedpro-cordless-vacuum')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. AquaShield Water Purifier -->
+        <div class="product-card" data-product-id="aquashield-water-purifier">
+          <div class="product-image-wrap" onclick="app.openQuickView('aquashield-water-purifier')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/water_purifier_1785486637513.jpg" alt="Philips AquaShield UV Water Purifier Dispenser" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">WATER SOLUTIONS</span>
+            <h3 class="product-title" onclick="app.openQuickView('aquashield-water-purifier')" style="cursor: pointer;">Philips AquaShield UV Water Purifier Dispenser</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.8</span><span class="rating-count">(142 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-aquashield-water-purifier">₹14,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('aquashield-water-purifier')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('aquashield-water-purifier')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Blood Pressure Monitor -->
+        <div class="product-card" data-product-id="blood-pressure-monitor-smart">
+          <div class="product-image-wrap" onclick="app.openQuickView('blood-pressure-monitor-smart')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/bp_monitor_1785486652645.jpg" alt="Philips Smart Upper Arm Blood Pressure Monitor" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">HEALTH MONITORS</span>
+            <h3 class="product-title" onclick="app.openQuickView('blood-pressure-monitor-smart')" style="cursor: pointer;">Philips Smart Upper Arm Blood Pressure Monitor</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.8</span><span class="rating-count">(230 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-blood-pressure-monitor-smart">₹3,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('blood-pressure-monitor-smart')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('blood-pressure-monitor-smart')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Pulse Oximeter -->
+        <div class="product-card" data-product-id="oximeter-pulse-spot">
+          <div class="product-image-wrap" onclick="app.openQuickView('oximeter-pulse-spot')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/pulse_oximeter_1785486668779.jpg" alt="Philips HeartPulse Finger Pulse Oximeter Spot Check" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">PERSONAL HEALTH</span>
+            <h3 class="product-title" onclick="app.openQuickView('oximeter-pulse-spot')" style="cursor: pointer;">Philips HeartPulse Finger Pulse Oximeter Spot Check</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.8</span><span class="rating-count">(410 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-oximeter-pulse-spot">₹2,199</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('oximeter-pulse-spot')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('oximeter-pulse-spot')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Shaver S9000 Prestige -->
+        <div class="product-card" data-product-id="shaver-s9000-prestige">
+          <div class="product-image-wrap" onclick="app.openQuickView('shaver-s9000-prestige')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/shaver_s9000_1785486684249.jpg" alt="Philips Shaver Series 9000 Prestige with SenseIQ" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">MEN'S GROOMING</span>
+            <h3 class="product-title" onclick="app.openQuickView('shaver-s9000-prestige')" style="cursor: pointer;">Philips Shaver Series 9000 Prestige with SenseIQ</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.9</span><span class="rating-count">(289 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-shaver-s9000-prestige">₹19,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('shaver-s9000-prestige')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('shaver-s9000-prestige')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. Satinelle Epilator -->
+        <div class="product-card" data-product-id="epilator-series-8000">
+          <div class="product-image-wrap" onclick="app.openQuickView('epilator-series-8000')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/epilator_woman_1785486699058.jpg" alt="Philips Satinelle Advanced Cordless Epilator Series 8000" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">WOMEN'S GROOMING</span>
+            <h3 class="product-title" onclick="app.openQuickView('epilator-series-8000')" style="cursor: pointer;">Philips Satinelle Advanced Cordless Epilator Series 8000</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.7</span><span class="rating-count">(162 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-epilator-series-8000">₹5,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('epilator-series-8000')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('epilator-series-8000')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13. Sonicare Toothbrush -->
+        <div class="product-card" data-product-id="sonicare-diamondclean-9000">
+          <div class="product-image-wrap" onclick="app.openQuickView('sonicare-diamondclean-9000')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/sonicare_toothbrush_1785513535597.jpg" alt="Philips Sonicare Electric Toothbrush" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">ORAL CARE</span>
+            <h3 class="product-title" onclick="app.openQuickView('sonicare-diamondclean-9000')" style="cursor: pointer;">Philips Sonicare Electric Toothbrush</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.9</span><span class="rating-count">(410 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-sonicare-diamondclean-9000">₹14,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('sonicare-diamondclean-9000')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('sonicare-diamondclean-9000')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14. Smart Hair Dryer -->
+        <div class="product-card" data-product-id="smart-hair-dryer">
+          <div class="product-image-wrap" onclick="app.openQuickView('smart-hair-dryer')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/smart_hair_dryer_1785515720018.jpg" alt="Philips Smart Hair Dryer" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">HAIR CARE</span>
+            <h3 class="product-title" onclick="app.openQuickView('smart-hair-dryer')" style="cursor: pointer;">Philips Smart Hair Dryer</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.8</span><span class="rating-count">(96 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-smart-hair-dryer">₹12,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('smart-hair-dryer')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('smart-hair-dryer')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15. VisaPure Facial Cleanser -->
+        <div class="product-card" data-product-id="facial-cleanser-visapure">
+          <div class="product-image-wrap" onclick="app.openQuickView('facial-cleanser-visapure')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/facial_cleanser_visapure_1785515741981.jpg" alt="Philips VisaPure Advanced Facial Cleansing & Massage System" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">SKIN CARE</span>
+            <h3 class="product-title" onclick="app.openQuickView('facial-cleanser-visapure')" style="cursor: pointer;">Philips VisaPure Advanced Facial Cleansing & Massage System</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.7</span><span class="rating-count">(110 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-facial-cleanser-visapure">₹9,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('facial-cleanser-visapure')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('facial-cleanser-visapure')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 16. Beard Trimmer BT7000 -->
+        <div class="product-card" data-product-id="beard-trimmer-bt7000">
+          <div class="product-image-wrap" onclick="app.openQuickView('beard-trimmer-bt7000')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/beard_trimmer_bt7000_1785515767725.jpg" alt="Philips Series 7000 Vacuum Beard Trimmer" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">SHAVERS</span>
+            <h3 class="product-title" onclick="app.openQuickView('beard-trimmer-bt7000')" style="cursor: pointer;">Philips Series 7000 Vacuum Beard Trimmer</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.6</span><span class="rating-count">(840 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-beard-trimmer-bt7000">₹1,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('beard-trimmer-bt7000')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('beard-trimmer-bt7000')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 17. Hue Play Gradient Lightstrip -->
+        <div class="product-card" data-product-id="hue-gradient-lightstrip">
+          <div class="product-image-wrap" onclick="app.openQuickView('hue-gradient-lightstrip')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/gradient_lightstrip_1785486536065.jpg" alt="Philips Hue Play Gradient Ambiance Lightstrip 2M" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">LIGHT</span>
+            <h3 class="product-title" onclick="app.openQuickView('hue-gradient-lightstrip')" style="cursor: pointer;">Philips Hue Play Gradient Ambiance Lightstrip 2M</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.9</span><span class="rating-count">(188 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-hue-gradient-lightstrip">₹9,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('hue-gradient-lightstrip')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('hue-gradient-lightstrip')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 18. Smart Ceiling Light -->
+        <div class="product-card" data-product-id="smart-ceiling-light">
+          <div class="product-image-wrap" onclick="app.openQuickView('smart-ceiling-light')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/smart_ceiling_light_1785513508900.jpg" alt="Philips Smart Ceiling Light" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">LIGHT</span>
+            <h3 class="product-title" onclick="app.openQuickView('smart-ceiling-light')" style="cursor: pointer;">Philips Smart Ceiling Light</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.7</span><span class="rating-count">(145 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-smart-ceiling-light">₹4,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('smart-ceiling-light')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('smart-ceiling-light')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 19. Air Purifier 1000i -->
+        <div class="product-card" data-product-id="air-purifier-1000i">
+          <div class="product-image-wrap" onclick="app.openQuickView('air-purifier-1000i')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/philips_air_purifier_1000i_white.png" alt="Philips Compact Smart Air Purifier Series 1000i" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">AIR PURIFIERS</span>
+            <h3 class="product-title" onclick="app.openQuickView('air-purifier-1000i')" style="cursor: pointer;">Philips Compact Smart Air Purifier Series 1000i</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.7</span><span class="rating-count">(154 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-air-purifier-1000i">₹12,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('air-purifier-1000i')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('air-purifier-1000i')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 20. Airfryer XL Connected -->
+        <div class="product-card" data-product-id="airfryer-xl-connected">
+          <div class="product-image-wrap" onclick="app.openQuickView('airfryer-xl-connected')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/philips_airfryer_xl_connected.jpg" alt="Philips Essential Airfryer XL Connected HD9280/90" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">AIR FRYERS</span>
+            <h3 class="product-title" onclick="app.openQuickView('airfryer-xl-connected')" style="cursor: pointer;">Philips Essential Airfryer XL Connected HD9280/90</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.8</span><span class="rating-count">(380 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-airfryer-xl-connected">₹11,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('airfryer-xl-connected')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('airfryer-xl-connected')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 21. OneBlade Hybrid Styler -->
+        <div class="product-card" data-product-id="shaver-oneblade-face-body">
+          <div class="product-image-wrap" onclick="app.openQuickView('shaver-oneblade-face-body')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/philips_oneblade.jpg" alt="Philips OneBlade Face + Body Hybrid Styler" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">MEN'S GROOMING</span>
+            <h3 class="product-title" onclick="app.openQuickView('shaver-oneblade-face-body')" style="cursor: pointer;">Philips OneBlade Face + Body Hybrid Styler</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.8</span><span class="rating-count">(920 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-shaver-oneblade-face-body">₹2,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('shaver-oneblade-face-body')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('shaver-oneblade-face-body')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 22. Sonicare Power Flosser -->
+        <div class="product-card" data-product-id="sonicare-power-flosser">
+          <div class="product-image-wrap" onclick="app.openQuickView('sonicare-power-flosser')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/philips_sonicare_flosser.jpg" alt="Philips Sonicare Power Flosser 3000 Cordless" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">ORAL CARE</span>
+            <h3 class="product-title" onclick="app.openQuickView('sonicare-power-flosser')" style="cursor: pointer;">Philips Sonicare Power Flosser 3000 Cordless</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.8</span><span class="rating-count">(175 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-sonicare-power-flosser">₹6,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('sonicare-power-flosser')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('sonicare-power-flosser')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 23. Lumea IPL Hair Removal -->
+        <div class="product-card" data-product-id="lumea-ipl-hair-removal">
+          <div class="product-image-wrap" onclick="app.openQuickView('lumea-ipl-hair-removal')" style="cursor: pointer; background: #FFFFFF; padding: 1.25rem;">
+            <img src="images/philips_lumea_ipl.jpg" alt="Philips Lumea Advanced IPL Hair Removal Device" style="width: 100%; height: 160px; object-fit: contain; display: block; margin: 0 auto;">
+          </div>
+          <div class="product-content">
+            <span class="product-category-name">WOMEN'S GROOMING</span>
+            <h3 class="product-title" onclick="app.openQuickView('lumea-ipl-hair-removal')" style="cursor: pointer;">Philips Lumea Advanced IPL Hair Removal Device</h3>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i><span>4.9</span><span class="rating-count">(210 reviews)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price" id="price-lumea-ipl-hair-removal">₹24,999</span>
+            </div>
+            <div class="product-card-actions">
+              <button class="btn btn-primary btn-sm flex-grow" onclick="app.addToCart('lumea-ipl-hair-removal')"><i class="fa-solid fa-bag-shopping"></i> Add to Cart</button>
+              <button class="btn btn-secondary btn-icon btn-sm" onclick="app.openQuickView('lumea-ipl-hair-removal')" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Shop by Room Section (6 Premium Room Category Cards) -->
+  <section class="shop-by-room-section" id="shop-by-room">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="room-section-badge">Intelligent Lighting for Every Space</span>
+        <h2 class="section-title">Shop by Room</h2>
+        <p class="section-desc">Discover tailored Philips smart lighting solutions designed specifically for every room in your home.</p>
+      </div>
+
+      <div class="room-grid">
+        <!-- 1. Living Room -->
+        <div class="room-card reveal-on-scroll" onclick="app.setSubcategoryFilter('Light')">
+          <div class="room-image-wrap">
+            <img src="images/room_living_room.jpg" alt="Living Room Smart Lighting" loading="lazy">
+            <div class="room-overlay-gradient"></div>
+            <span class="room-chip"><i class="fa-solid fa-couch"></i> Living Room</span>
+          </div>
+          <div class="room-card-body">
+            <h3 class="room-title">Living Room</h3>
+            <p class="room-desc">Immersive ambient lighting, gradient TV backlighting, and smart floor lamps for relaxation & entertainment.</p>
+            <a href="#bestsellers" onclick="app.setSubcategoryFilter('Light')" class="room-btn-link">
+              Explore Collection <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Bedroom -->
+        <div class="room-card reveal-on-scroll" onclick="app.setSubcategoryFilter('Light')">
+          <div class="room-image-wrap">
+            <img src="images/room_bedroom.jpg" alt="Bedroom Smart Lighting" loading="lazy">
+            <div class="room-overlay-gradient"></div>
+            <span class="room-chip"><i class="fa-solid fa-bed"></i> Bedroom</span>
+          </div>
+          <div class="room-card-body">
+            <h3 class="room-title">Bedroom</h3>
+            <p class="room-desc">Gentle wake-up light scenes, dimmable bedside lamps, and soothing warm ambient glow for restful sleep.</p>
+            <a href="#bestsellers" onclick="app.setSubcategoryFilter('Light')" class="room-btn-link">
+              Explore Collection <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Kitchen -->
+        <div class="room-card reveal-on-scroll" onclick="app.setSubcategoryFilter('Light')">
+          <div class="room-image-wrap">
+            <img src="images/room_kitchen.jpg" alt="Kitchen Smart Lighting" loading="lazy">
+            <div class="room-overlay-gradient"></div>
+            <span class="room-chip"><i class="fa-solid fa-utensils"></i> Kitchen</span>
+          </div>
+          <div class="room-card-body">
+            <h3 class="room-title">Kitchen</h3>
+            <p class="room-desc">Bright task lighting under cabinets and dimmable ceiling spotlights for precision meal preparation.</p>
+            <a href="#bestsellers" onclick="app.setSubcategoryFilter('Light')" class="room-btn-link">
+              Explore Collection <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Home and Office -->
+        <div class="room-card reveal-on-scroll" onclick="app.setSubcategoryFilter('Light')">
+          <div class="room-image-wrap">
+            <img src="images/room_home_office.jpg" alt="Home and Office Smart Lighting" loading="lazy">
+            <div class="room-overlay-gradient"></div>
+            <span class="room-chip"><i class="fa-solid fa-laptop-code"></i> Home and Office</span>
+          </div>
+          <div class="room-card-body">
+            <h3 class="room-title">Home and Office</h3>
+            <p class="room-desc">EyeComfort glare-free desk lamps and focus-enhancing daylight scenes to boost daily productivity.</p>
+            <a href="#bestsellers" onclick="app.setSubcategoryFilter('Light')" class="room-btn-link">
+              Explore Collection <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. Outdoor -->
+        <div class="room-card reveal-on-scroll" onclick="app.setSubcategoryFilter('Light')">
+          <div class="room-image-wrap">
+            <img src="images/room_outdoor.jpg" alt="Outdoor Smart Lighting" loading="lazy">
+            <div class="room-overlay-gradient"></div>
+            <span class="room-chip"><i class="fa-solid fa-tree"></i> Outdoor & Garden</span>
+          </div>
+          <div class="room-card-body">
+            <h3 class="room-title">Outdoor</h3>
+            <p class="room-desc">Weatherproof smart wall lanterns, garden spot lights, and motion-activated security illumination.</p>
+            <a href="#bestsellers" onclick="app.setSubcategoryFilter('Light')" class="room-btn-link">
+              Explore Collection <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. Bathroom -->
+        <div class="room-card reveal-on-scroll" onclick="app.setSubcategoryFilter('Light')">
+          <div class="room-image-wrap">
+            <img src="images/room_bathroom.jpg" alt="Bathroom Smart Lighting" loading="lazy">
+            <div class="room-overlay-gradient"></div>
+            <span class="room-chip"><i class="fa-solid fa-bath"></i> Bathroom</span>
+          </div>
+          <div class="room-card-body">
+            <h3 class="room-title">Bathroom</h3>
+            <p class="room-desc">Water-resistant vanity mirror lighting and adjustable color temperature for refreshing morning routines.</p>
+            <a href="#bestsellers" onclick="app.setSubcategoryFilter('Light')" class="room-btn-link">
+              Explore Collection <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. How Philips Technology Works (Process Steps Journey) -->
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <h2 class="section-title">How Philips Technology Works</h2>
+        <p class="section-desc">From clinical laboratory testing to smart sensor calibration — excellence at every single stage.</p>
+      </div>
+
+      <div class="process-steps-grid">
+        <div class="process-step-card reveal-on-scroll">
+          <div class="step-number-badge">1</div>
+          <div class="step-icon-wrap"><i class="fa-solid fa-flask-vial"></i></div>
+          <h3 class="step-title">Clinical Testing & Sourcing</h3>
+          <p class="step-desc">Rigorous medical-grade testing and component selection in European engineering hubs.</p>
+        </div>
+
+        <div class="process-step-card reveal-on-scroll">
+          <div class="step-number-badge">2</div>
+          <div class="step-icon-wrap"><i class="fa-solid fa-sliders"></i></div>
+          <h3 class="step-title">SenseIQ Calibration</h3>
+          <p class="step-desc">Advanced microprocessors calibrate real-time adaptive feedback for personal care and smart cooking.</p>
+        </div>
+
+        <div class="process-step-card reveal-on-scroll">
+          <div class="step-number-badge">3</div>
+          <div class="step-icon-wrap"><i class="fa-solid fa-solar-panel"></i></div>
+          <h3 class="step-title">Eco-Friendly Production</h3>
+          <p class="step-desc">Crafted with recyclable materials and energy-saving circuitry designed for 10+ years of usage.</p>
+        </div>
+
+        <div class="process-step-card reveal-on-scroll">
+          <div class="step-number-badge">4</div>
+          <div class="step-icon-wrap"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3 class="step-title">Doorstep Delivery & Support</h3>
+          <p class="step-desc">Direct express shipping with live tracking and 24/7 dedicated customer service hotline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- 7. Premium Compact Customer Trust Banner Section -->
+  <section class="trust-banner-section reveal-on-scroll" id="stats" style="background: #0057B8; color: #FFFFFF; padding: 2.25rem 0; font-family: 'General Sans', sans-serif;">
+    <div class="container">
+      <div class="trust-banner-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; align-items: center; justify-content: center;">
+        
+        <!-- Column 1: Average Rating -->
+        <div class="trust-col" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div class="trust-icon" style="font-size: 1.4rem; color: #FFFFFF; margin-bottom: 0.5rem;">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div style="font-size: 1.85rem; font-weight: 800; color: #FFFFFF; line-height: 1.1; margin-bottom: 0.2rem; letter-spacing: -0.5px;">4.8/5</div>
+          <h3 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin: 0 0 0.2rem 0;">Average Rating</h3>
+          <p style="font-size: 0.82rem; font-weight: 400; color: rgba(255, 255, 255, 0.85); line-height: 1.4; max-width: 220px; margin: 0;">Trusted by thousands of verified customers.</p>
+        </div>
+
+        <!-- Column 2: Products Delivered -->
+        <div class="trust-col" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div class="trust-icon" style="font-size: 1.4rem; color: #FFFFFF; margin-bottom: 0.5rem;">
+            <i class="fa-solid fa-box"></i>
+          </div>
+          <div style="font-size: 1.85rem; font-weight: 800; color: #FFFFFF; line-height: 1.1; margin-bottom: 0.2rem; letter-spacing: -0.5px;">1M+</div>
+          <h3 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin: 0 0 0.2rem 0;">Products Delivered</h3>
+          <p style="font-size: 0.82rem; font-weight: 400; color: rgba(255, 255, 255, 0.85); line-height: 1.4; max-width: 220px; margin: 0;">Reliable delivery across India.</p>
+        </div>
+
+        <!-- Column 3: Official Warranty -->
+        <div class="trust-col" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div class="trust-icon" style="font-size: 1.4rem; color: #FFFFFF; margin-bottom: 0.5rem;">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div style="font-size: 1.85rem; font-weight: 800; color: #FFFFFF; line-height: 1.1; margin-bottom: 0.2rem; letter-spacing: -0.5px;">2 Years</div>
+          <h3 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin: 0 0 0.2rem 0;">Official Warranty</h3>
+          <p style="font-size: 0.82rem; font-weight: 400; color: rgba(255, 255, 255, 0.85); line-height: 1.4; max-width: 220px; margin: 0;">Quality products backed by Philips.</p>
+        </div>
+
+        <!-- Column 4: Customer Support -->
+        <div class="trust-col" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <div class="trust-icon" style="font-size: 1.4rem; color: #FFFFFF; margin-bottom: 0.5rem;">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <div style="font-size: 1.85rem; font-weight: 800; color: #FFFFFF; line-height: 1.1; margin-bottom: 0.2rem; letter-spacing: -0.5px;">24/7</div>
+          <h3 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin: 0 0 0.2rem 0;">Customer Support</h3>
+          <p style="font-size: 0.82rem; font-weight: 400; color: rgba(255, 255, 255, 0.85); line-height: 1.4; max-width: 220px; margin: 0;">Friendly assistance whenever you need it.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Verified Customer Testimonials Section -->
+  <section class="reviews-section" id="reviews" style="background: #F8FAFC; padding: 5rem 0;">
+    <div class="container">
+      <div class="section-header reveal-on-scroll" style="text-align: center; margin-bottom: 3.5rem;">
+        <h2 class="section-title" style="font-size: 2.2rem; font-weight: 800; color: #1E293B; margin-bottom: 0.75rem;">What Our Customers Say</h2>
+        <p class="section-desc" style="color: #64748B; font-size: 1.05rem; max-width: 700px; margin: 0 auto; line-height: 1.6;">Trusted by thousands of families worldwide for innovative lighting, home appliances, healthcare, and personal care solutions.</p>
+      </div>
+
+      <div class="reviews-carousel-wrapper reveal-on-scroll" style="position: relative; max-width: 760px; margin: 0 auto; padding: 0 3.5rem;">
+        <button class="reviews-nav-btn prev-btn" id="rev-prev" onclick="app.prevReview()" aria-label="Previous Review" style="position: absolute; left: 0; top: 45%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; border: 1px solid #E2E8F0; box-shadow: 0 4px 14px rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: #0057B8; cursor: pointer; z-index: 10;">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        
+        <div class="reviews-slider" id="reviews-slider" style="background: #FFFFFF; border-radius: 24px; border: 1px solid #E2E8F0; box-shadow: 0 10px 30px rgba(0,0,0,0.04); padding: 2.5rem; position: relative;">
+          <!-- Card 1: Sarah Mitchell -->
+          <div class="review-card active" data-review-index="0">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 52px; height: 52px; border-radius: 50%; background: #0057B8; color: #FFFFFF; font-weight: 800; font-size: 1.3rem; display: flex; align-items: center; justify-content: center;">
+                  S
+                </div>
+                <div>
+                  <h4 style="font-size: 1.15rem; font-weight: 800; color: #1E293B; margin: 0 0 0.15rem 0;">Sarah Mitchell</h4>
+                  <span style="font-size: 0.85rem; color: #94A3B8; font-weight: 500;">Smart Home Enthusiast</span>
+                </div>
+              </div>
+              <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google" style="height: 24px; width: 74px; display: block; object-fit: contain;">
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 0.35rem; margin-bottom: 1.25rem; color: #F59E0B; font-size: 1.05rem;">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span style="color: #94A3B8; font-size: 0.85rem; font-weight: 500; margin-left: 0.4rem;">· Verified Review</span>
+            </div>
+
+            <p style="font-size: 1.08rem; color: #334155; line-height: 1.65; font-style: italic; margin: 0; font-weight: 500;">
+              "The Philips Smart Lighting completely transformed my living room. The setup was quick, the lighting quality is outstanding, and controlling everything from my phone is incredibly convenient."
+            </p>
+          </div>
+        </div>
+        
+        <button class="reviews-nav-btn next-btn" id="rev-next" onclick="app.nextReview()" aria-label="Next Review" style="position: absolute; right: 0; top: 45%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; border: 1px solid #E2E8F0; box-shadow: 0 4px 14px rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: #0057B8; cursor: pointer; z-index: 10;">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="reviews-dots" id="reviews-dots" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin-top: 1.75rem;">
+          <span class="dot active" onclick="app.goToReview(0)" style="width: 24px; height: 10px; border-radius: 999px; background: #0057B8; cursor: pointer; transition: all 0.3s ease;"></span>
+          <span class="dot" onclick="app.goToReview(1)" style="width: 10px; height: 10px; border-radius: 50%; background: #CBD5E1; cursor: pointer; transition: all 0.3s ease;"></span>
+          <span class="dot" onclick="app.goToReview(2)" style="width: 10px; height: 10px; border-radius: 50%; background: #CBD5E1; cursor: pointer; transition: all 0.3s ease;"></span>
+          <span class="dot" onclick="app.goToReview(3)" style="width: 10px; height: 10px; border-radius: 50%; background: #CBD5E1; cursor: pointer; transition: all 0.3s ease;"></span>
+          <span class="dot" onclick="app.goToReview(4)" style="width: 10px; height: 10px; border-radius: 50%; background: #CBD5E1; cursor: pointer; transition: all 0.3s ease;"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Interactive FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Clear answers regarding doorstep warranty, SenseIQ sensor technology, delivery times, and product authenticity.</p>
+      </div>
+
+      <div class="faq-wrapper reveal-on-scroll" id="faq-container">
+        <!-- FAQ 1 (Expanded) -->
+        <div class="faq-item active" style="background: #FFFFFF; border-radius: 14px; border: 1px solid #E2E8F0; margin-bottom: 1rem; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.02);">
+          <button class="faq-question" onclick="app.toggleFaq(0)" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.35rem 1.5rem; background: none; border: none; font-size: 1.05rem; font-weight: 700; color: #1E293B; text-align: left; cursor: pointer;">
+            <span>How does the website category navigation work?</span>
+            <i class="fa-solid fa-chevron-up" style="color: #0057B8;"></i>
+          </button>
+          <div class="faq-answer" style="padding: 0 1.5rem 1.35rem 1.5rem; color: #64748B; font-size: 0.95rem; line-height: 1.6; border-top: 1px solid #F1F5F9; padding-top: 1rem;">
+            Our website is organized into 6 main pillars: Home Appliances, Healthcare, Personal Care, Support, Cart, and Profile. Each main pillar features exactly 8 subcategories accessible via mega menus or category filters.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item" style="background: #FFFFFF; border-radius: 14px; border: 1px solid #E2E8F0; margin-bottom: 1rem; overflow: hidden;">
+          <button class="faq-question" onclick="app.toggleFaq(1)" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.35rem 1.5rem; background: none; border: none; font-size: 1.05rem; font-weight: 700; color: #1E293B; text-align: left; cursor: pointer;">
+            <span>What products are listed under Home Appliances?</span>
+            <i class="fa-solid fa-chevron-down" style="color: #64748B;"></i>
+          </button>
+          <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.35rem 1.5rem; color: #64748B; font-size: 0.95rem; line-height: 1.6;">
+            Home Appliances includes Philips Hue Smart Lighting, Air Purifiers (Series 3000i & 1000i), Air Fryers (XXL Smart Sensing), Kitchen Appliances, Irons & Steamers, Coffee Makers, Vacuum Cleaners, and Water Solutions.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item" style="background: #FFFFFF; border-radius: 14px; border: 1px solid #E2E8F0; margin-bottom: 1rem; overflow: hidden;">
+          <button class="faq-question" onclick="app.toggleFaq(2)" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.35rem 1.5rem; background: none; border: none; font-size: 1.05rem; font-weight: 700; color: #1E293B; text-align: left; cursor: pointer;">
+            <span>Where can I find Philips Hue Smart Lights?</span>
+            <i class="fa-solid fa-chevron-down" style="color: #64748B;"></i>
+          </button>
+          <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.35rem 1.5rem; color: #64748B; font-size: 0.95rem; line-height: 1.6;">
+            Philips Hue Smart Lights are available under the Home Appliances > Light category tab or via the interactive 16 category grid.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item" style="background: #FFFFFF; border-radius: 14px; border: 1px solid #E2E8F0; margin-bottom: 1rem; overflow: hidden;">
+          <button class="faq-question" onclick="app.toggleFaq(3)" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 1.35rem 1.5rem; background: none; border: none; font-size: 1.05rem; font-weight: 700; color: #1E293B; text-align: left; cursor: pointer;">
+            <span>What warranty comes with official purchases?</span>
+            <i class="fa-solid fa-chevron-down" style="color: #64748B;"></i>
+          </button>
+          <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.35rem 1.5rem; color: #64748B; font-size: 0.95rem; line-height: 1.6;">
+            All official Philips products come with a 2-Year Hassle-Free Doorstep Replacement Warranty with free technician support across India.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-Over Shopping Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-drawer-title">
+    <div class="cart-header">
+      <h2 id="cart-drawer-title" class="cart-drawer-title">
+        <i class="fa-solid fa-bag-shopping"></i> Your Philips Cart
+      </h2>
+      <button class="cart-close-btn" id="cart-close" aria-label="Close Cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    
+    <div class="cart-body" id="cart-items-container">
+      <!-- Free Delivery Progress Bar -->
+      <div class="cart-progress-container">
+        <div class="cart-progress-desc" id="cart-progress-text">
+          <i class="fa-solid fa-truck-fast"></i> Add ₹499 more for Free Express Shipping
+        </div>
+        <div class="cart-progress-bg">
+          <div class="cart-progress-fill" id="cart-progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Empty Cart State -->
+      <div class="empty-cart-state" id="empty-cart-state">
+        <i class="fa-solid fa-bag-shopping empty-icon"></i>
+        <h3>Your shopping cart is empty</h3>
+        <p>Browse our catalog and add official Philips products to your cart!</p>
+        <a href="#bestsellers" class="btn btn-primary btn-sm close-cart-link">Browse Products</a>
+      </div>
+
+      <!-- Cart Items List -->
+      <ul class="cart-items-list" id="cart-items-list">
+        <!-- Rendered dynamically by JavaScript -->
+      </ul>
+    </div>
+
+    <div class="cart-footer" id="cart-footer">
+      <!-- Promo Code Section -->
+      <div class="coupon-section">
+        <input type="text" id="coupon-code-input" placeholder="Enter Promo Code (e.g. PHILIPS10)">
+        <button id="apply-coupon-btn" class="btn btn-secondary btn-sm">Apply</button>
+      </div>
+      <div id="coupon-applied-msg" class="coupon-msg"></div>
+
+      <div class="cart-total-row">
+        <span>Subtotal:</span>
+        <span class="total-val" id="cart-subtotal">₹0</span>
+      </div>
+      <p class="checkout-notice"><i class="fa-solid fa-shield-halved"></i> Includes 2-Year Official Brand Warranty & Free Returns</p>
+      
+      <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.5rem;">
+        <button class="btn btn-primary checkout-btn" onclick="app.openCheckoutModal()" style="width: 100%;">
+          <i class="fa-solid fa-lock"></i> Proceed to Express Checkout
+        </button>
+        <button class="btn btn-secondary checkout-btn" id="checkout-whatsapp" style="width: 100%; font-size: 0.88rem; border: 1.5px solid #E2E8F0;">
+          <i class="fa-brands fa-whatsapp"></i> Quick Checkout via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Product Detail Modal -->
+  <div class="modal-overlay" id="quickview-modal-overlay">
+    <div class="modal-card" id="quickview-modal">
+      <button class="modal-close-btn" id="quickview-close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="quickview-body" id="quickview-content">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Refer & Warranty Modal -->
+  <div class="modal-overlay" id="refer-modal-overlay">
+    <div class="modal-card refer-modal-card">
+      <button class="modal-close-btn" id="refer-close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="refer-modal-body">
+        <div class="refer-icon"><i class="fa-solid fa-gift"></i></div>
+        <h2>Philips Refer & Register Warranty</h2>
+        <p>Register your product serial number to activate 2-Year Doorstep Warranty & get ₹500 discount voucher for your friends!</p>
+        <form id="refer-form" onsubmit="event.preventDefault(); alert('Warranty registered & voucher link generated successfully!'); document.getElementById('refer-modal-overlay').classList.remove('active');">
+          <input type="text" placeholder="Your Full Name" required class="modal-input">
+          <input type="email" placeholder="Your Email Address" required class="modal-input">
+          <input type="text" placeholder="Product Serial Number / Order ID" required class="modal-input">
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Register & Activate Warranty</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Customer Account Modal -->
+  <div class="modal-overlay" id="account-modal-overlay">
+    <div class="modal-card account-modal-card">
+      <button class="modal-close-btn" id="account-close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="account-modal-body">
+        <div class="account-icon"><i class="fa-solid fa-circle-user"></i></div>
+        <h2>Philips Customer Account</h2>
+        <p>Log in to track orders, manage warranties, and view saved wishlist items.</p>
+        <form id="account-form" onsubmit="event.preventDefault(); alert('Logged in successfully!'); document.getElementById('account-modal-overlay').classList.remove('active');">
+          <input type="email" placeholder="Email / Phone Number" required class="modal-input">
+          <input type="password" placeholder="Password" required class="modal-input">
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Sign In to Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="#home" class="footer-logo">
+            <span class="logo-text text-white">PHILIPS <span class="logo-highlight">Innovation & You</span></span>
+          </a>
+          <p class="brand-desc">Improving people's health and well-being through meaningful innovation in smart lighting, healthcare technology, personal grooming, and home appliances.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-links-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#bestsellers">Shop Best Sellers</a></li>
+            <li><a href="#explore-range">Product Range</a></li>
+            <li><a href="#reviews">Customer Testimonials</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h3>Categories</h3>
+          <ul class="footer-links">
+            <li><a href="#bestsellers">Smart Lighting</a></li>
+            <li><a href="#bestsellers">Home & Kitchen</a></li>
+            <li><a href="#bestsellers">Personal Care Shavers</a></li>
+            <li><a href="#bestsellers">Sonicare Oral Care</a></li>
+            <li><a href="#bestsellers">Avent Mother & Baby</a></li>
+            <li><a href="#bestsellers">Healthcare Devices</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <h3>Contact & Support</h3>
+          <ul class="contact-details">
+            <li>
+              <div class="icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
+              <span class="detail-text"><strong>Philips Innovation Campus</strong>, Tech Park, India</span>
+            </li>
+            <li>
+              <div class="icon-wrap"><i class="fa-solid fa-phone"></i></div>
+              <span class="detail-text"><a href="tel:18001022929" class="phone-link">1800-102-2929 (Toll Free)</a></span>
+            </li>
+            <li>
+              <div class="icon-wrap"><i class="fa-solid fa-clock"></i></div>
+              <span class="detail-text">Support Hours: Mon-Sat 9:00 AM - 9:00 PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Koninklijke Philips N.V. All rights reserved. Redesign Prototype inspired by MittiFresh architecture.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
