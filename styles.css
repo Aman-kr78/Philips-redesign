@@ -2368,3 +2368,15 @@ img {
     display: none;
   }
 }
+
+@media (max-width: 991px) {
+  .reviews-grid-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .reviews-grid-container {
+    grid-template-columns: 1fr !important;
+  }
+}

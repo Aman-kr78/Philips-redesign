@@ -585,43 +585,57 @@ class PhilipsApp {
 
   goToReview(index, resetTimer = true) {
     this.currentReviewIndex = index;
-    const rev = PHILIPS_DATA.reviews[index];
-    if (!rev) return;
+    const total = PHILIPS_DATA.reviews.length;
+    if (!total) return;
+
+    // Get 3 consecutive reviews starting at index
+    const reviewsToShow = [
+      PHILIPS_DATA.reviews[index % total],
+      PHILIPS_DATA.reviews[(index + 1) % total],
+      PHILIPS_DATA.reviews[(index + 2) % total]
+    ];
 
     const slider = document.getElementById('reviews-slider');
     if (slider) {
       slider.innerHTML = `
-        <div class="review-card active" data-review-index="${index}" style="opacity: 0; transition: opacity 0.4s ease-in-out;">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-            <div style="display: flex; align-items: center; gap: 1rem;">
-              <div style="width: 52px; height: 52px; border-radius: 50%; background: ${rev.color}; color: ${rev.textColor || '#FFF'}; font-weight: 800; font-size: 1.3rem; display: flex; align-items: center; justify-content: center;">
-                ${rev.avatar}
-              </div>
+        <div class="reviews-grid-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; width: 100%;">
+          ${reviewsToShow.map((rev) => `
+            <div class="review-card" style="background: #FFFFFF; border-radius: 20px; border: 1px solid #E2E8F0; box-shadow: 0 10px 30px rgba(0,0,0,0.04); padding: 1.85rem; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; opacity: 0;" onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 18px 36px rgba(0,87,184,0.12)'; this.style.borderColor='#0057B8';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.04)'; this.style.borderColor='#E2E8F0';">
               <div>
-                <h4 style="font-size: 1.15rem; font-weight: 800; color: #1E293B; margin: 0 0 0.15rem 0;">${rev.author}</h4>
-                <span style="font-size: 0.85rem; color: #94A3B8; font-weight: 500;">${rev.meta}</span>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                  <div style="display: flex; align-items: center; gap: 0.85rem;">
+                    <div style="width: 48px; height: 48px; border-radius: 50%; background: ${rev.color}; color: ${rev.textColor || '#FFF'}; font-weight: 800; font-size: 1.15rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                      ${rev.avatar}
+                    </div>
+                    <div>
+                      <h4 style="font-size: 1.05rem; font-weight: 800; color: #1E293B; margin: 0 0 0.15rem 0;">${rev.author}</h4>
+                      <span style="font-size: 0.8rem; color: #94A3B8; font-weight: 500;">${rev.meta}</span>
+                    </div>
+                  </div>
+                  <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google" style="height: 20px; width: 62px; display: block; object-fit: contain; flex-shrink: 0;">
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 0.25rem; margin-bottom: 1rem; color: #F59E0B; font-size: 0.95rem;">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <span style="color: #94A3B8; font-size: 0.8rem; font-weight: 500; margin-left: 0.35rem;">· ${rev.date}</span>
+                </div>
+
+                <p style="font-size: 0.95rem; color: #334155; line-height: 1.6; font-style: italic; margin: 0; font-weight: 500;">
+                  "${rev.text}"
+                </p>
               </div>
             </div>
-            <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google" style="height: 24px; width: 74px; display: block; object-fit: contain;">
-          </div>
-
-          <div style="display: flex; align-items: center; gap: 0.35rem; margin-bottom: 1.25rem; color: #F59E0B; font-size: 1.05rem;">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <span style="color: #94A3B8; font-size: 0.85rem; font-weight: 500; margin-left: 0.4rem;">· ${rev.date}</span>
-          </div>
-
-          <p style="font-size: 1.08rem; color: #334155; line-height: 1.65; font-style: italic; margin: 0; font-weight: 500;">
-            "${rev.text}"
-          </p>
+          `).join('')}
         </div>
       `;
+
       setTimeout(() => {
-        const activeCard = slider.querySelector('.review-card');
-        if (activeCard) activeCard.style.opacity = '1';
+        const cards = slider.querySelectorAll('.review-card');
+        cards.forEach(c => c.style.opacity = '1');
       }, 30);
     }
 

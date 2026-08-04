@@ -897,6 +897,15 @@ const PHILIPS_DATA = {
       color: "#10B981",
       date: "Verified Review",
       text: "From smart lighting to personal care products, Philips has become my go-to brand. The products are reliable, beautifully designed, and work seamlessly together."
+    },
+    {
+      author: "Alex Rivera",
+      meta: "Smart Home Designer",
+      avatar: "A",
+      color: "#F59E0B",
+      textColor: "#FFFFFF",
+      date: "Verified Review",
+      text: "The build quality and seamless app integration of Philips Hue lights are unmatched. Creating custom lighting scenes for movie nights and dining is effortless."
     }
   ],
 
