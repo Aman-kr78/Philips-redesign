@@ -44,129 +44,115 @@
       
       <nav class="main-nav" aria-label="Main Navigation">
         <ul class="nav-links">
-          <!-- 1. Products Combined Mega Menu (Home Appliances, Healthcare, Personal Care) -->
-          <li class="nav-item-dropdown">
-            <a href="#bestsellers" class="nav-link" onclick="app.setSubcategoryFilter('all')">
-              Products <i class="fa-solid fa-chevron-down nav-arrow"></i>
+          <!-- 1. Home Link -->
+          <li>
+            <a href="#home" class="nav-link">
+              Home
             </a>
-            <div class="mega-dropdown" style="width: 720px; left: 50%; transform: translateX(-50%); padding: 0;">
-              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; padding: 1.5rem; background: #FFFFFF; border-radius: 12px;">
-                
-                <!-- Column 1: Home Appliances -->
-                <div>
-                  <div style="font-weight: 800; font-size: 0.85rem; color: #0057B8; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1.5px solid #E2E8F0; padding-bottom: 0.35rem;">
-                    <i class="fa-solid fa-house"></i> Home Appliances
-                  </div>
-                  <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Light')" class="mega-sub-link"><i class="fa-solid fa-lightbulb"></i> Light</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Air Purifiers')" class="mega-sub-link"><i class="fa-solid fa-wind"></i> Air Purifiers</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Air Fryers')" class="mega-sub-link"><i class="fa-solid fa-utensils"></i> Air Fryers</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Kitchen Appliances')" class="mega-sub-link"><i class="fa-solid fa-blender"></i> Kitchen Appliances</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Irons & Steamers')" class="mega-sub-link"><i class="fa-solid fa-shirt"></i> Irons & Steamers</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Coffee Makers')" class="mega-sub-link"><i class="fa-solid fa-mug-hot"></i> Coffee Makers</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Vacuum Cleaners')" class="mega-sub-link"><i class="fa-solid fa-broom"></i> Vacuum Cleaners</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Water Solutions')" class="mega-sub-link"><i class="fa-solid fa-glass-water"></i> Water Solutions</a>
-                  </div>
-                </div>
+          </li>
 
-                <!-- Column 2: Healthcare -->
-                <div>
-                  <div style="font-weight: 800; font-size: 0.85rem; color: #0057B8; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1.5px solid #E2E8F0; padding-bottom: 0.35rem;">
-                    <i class="fa-solid fa-heart-pulse"></i> Healthcare
-                  </div>
-                  <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Health Monitors')" class="mega-sub-link"><i class="fa-solid fa-notes-medical"></i> Health Monitors</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Personal Health')" class="mega-sub-link"><i class="fa-solid fa-heartbeat"></i> Personal Health</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Sleep & Respiratory')" class="mega-sub-link"><i class="fa-solid fa-lungs"></i> Sleep & Respiratory</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Health Devices')" class="mega-sub-link"><i class="fa-solid fa-laptop-medical"></i> Health Devices</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Therapy Devices')" class="mega-sub-link"><i class="fa-solid fa-kit-medical"></i> Therapy Devices</a>
-                  </div>
-                </div>
-
-                <!-- Column 3: Personal Care -->
-                <div>
-                  <div style="font-weight: 800; font-size: 0.85rem; color: #0057B8; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1.5px solid #E2E8F0; padding-bottom: 0.35rem;">
-                    <i class="fa-solid fa-user-tie"></i> Personal Care
-                  </div>
-                  <div style="display: flex; flex-direction: column; gap: 0.4rem;">
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Men\'s Grooming')" class="mega-sub-link"><i class="fa-solid fa-user-ninja"></i> Men's Grooming</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Women\'s Grooming')" class="mega-sub-link"><i class="fa-solid fa-gem"></i> Women's Grooming</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Oral Care')" class="mega-sub-link"><i class="fa-solid fa-tooth"></i> Oral Care</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Hair Care')" class="mega-sub-link"><i class="fa-solid fa-scissors"></i> Hair Care</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Skin Care')" class="mega-sub-link"><i class="fa-solid fa-spa"></i> Skin Care</a>
-                    <a href="#bestsellers" onclick="app.setSubcategoryFilter('Shavers')" class="mega-sub-link"><i class="fa-solid fa-shield-halved"></i> Shavers</a>
-                  </div>
-                </div>
-
+          <!-- 2. Healthcare Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="#bestsellers" class="nav-link" onclick="app.setParentCategoryFilter('Healthcare')">
+              Healthcare <i class="fa-solid fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-dropdown" style="width: 320px;">
+              <div class="mega-dropdown-header">
+                <i class="fa-solid fa-heart-pulse" style="color: var(--primary-blue);"></i>
+                <span>Healthcare Innovations</span>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns: 1fr;">
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Health Monitors')" class="mega-sub-link"><i class="fa-solid fa-notes-medical"></i> Health Monitors</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Personal Health')" class="mega-sub-link"><i class="fa-solid fa-heartbeat"></i> Personal Health</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Sleep & Respiratory')" class="mega-sub-link"><i class="fa-solid fa-lungs"></i> Sleep & Respiratory</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Health Devices')" class="mega-sub-link"><i class="fa-solid fa-laptop-medical"></i> Health Devices</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Therapy Devices')" class="mega-sub-link"><i class="fa-solid fa-kit-medical"></i> Therapy Devices</a>
               </div>
             </div>
           </li>
 
-          <!-- 4. Support Dropdown -->
+          <!-- 3. Personal Care Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="#bestsellers" class="nav-link" onclick="app.setParentCategoryFilter('Personal Care')">
+              Personal Care <i class="fa-solid fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-dropdown" style="width: 320px;">
+              <div class="mega-dropdown-header">
+                <i class="fa-solid fa-user-tie" style="color: var(--primary-blue);"></i>
+                <span>Personal Care & Grooming</span>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns: 1fr;">
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Men\'s Grooming')" class="mega-sub-link"><i class="fa-solid fa-user-ninja"></i> Men's Grooming</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Women\'s Grooming')" class="mega-sub-link"><i class="fa-solid fa-gem"></i> Women's Grooming</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Oral Care')" class="mega-sub-link"><i class="fa-solid fa-tooth"></i> Oral Care (Sonicare)</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Hair Care')" class="mega-sub-link"><i class="fa-solid fa-scissors"></i> Hair Care & Dryers</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Skin Care')" class="mega-sub-link"><i class="fa-solid fa-spa"></i> Skin Care & Cleansers</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Shavers')" class="mega-sub-link"><i class="fa-solid fa-shield-halved"></i> Shavers (OneBlade)</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 4. Mother & Baby Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="#bestsellers" class="nav-link" onclick="app.setParentCategoryFilter('Mother & Baby')">
+              Mother & Baby <i class="fa-solid fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-dropdown" style="width: 320px;">
+              <div class="mega-dropdown-header">
+                <i class="fa-solid fa-baby" style="color: var(--primary-blue);"></i>
+                <span>Avent Mother & Baby</span>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns: 1fr;">
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Breast Pumps')" class="mega-sub-link"><i class="fa-solid fa-bottle-droplet"></i> Electric Breast Pumps</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Baby Bottles')" class="mega-sub-link"><i class="fa-solid fa-baby-carriage"></i> Natural Baby Bottles</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Sterilizers')" class="mega-sub-link"><i class="fa-solid fa-shield-virus"></i> Steam Sterilizers & Warmers</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Baby Monitors')" class="mega-sub-link"><i class="fa-solid fa-video"></i> Smart Baby Monitors</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Toddler Feeding')" class="mega-sub-link"><i class="fa-solid fa-utensils"></i> Toddler Cups & Cutlery</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 5. Home Appliances Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="#bestsellers" class="nav-link" onclick="app.setParentCategoryFilter('Home Appliances')">
+              Home Appliances <i class="fa-solid fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="mega-dropdown" style="width: 340px;">
+              <div class="mega-dropdown-header">
+                <i class="fa-solid fa-house-laptop" style="color: var(--primary-blue);"></i>
+                <span>Home Appliances</span>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns: 1fr;">
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Light')" class="mega-sub-link"><i class="fa-solid fa-lightbulb"></i> Light (Philips Hue)</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Air Purifiers')" class="mega-sub-link"><i class="fa-solid fa-wind"></i> Air Purifiers</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Air Fryers')" class="mega-sub-link"><i class="fa-solid fa-utensils"></i> Air Fryers</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Kitchen Appliances')" class="mega-sub-link"><i class="fa-solid fa-blender"></i> Kitchen Appliances</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Irons & Steamers')" class="mega-sub-link"><i class="fa-solid fa-shirt"></i> Irons & Steamers</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Coffee Makers')" class="mega-sub-link"><i class="fa-solid fa-mug-hot"></i> Coffee Makers</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Vacuum Cleaners')" class="mega-sub-link"><i class="fa-solid fa-broom"></i> Vacuum Cleaners</a>
+                <a href="#bestsellers" onclick="app.setSubcategoryFilter('Water Solutions')" class="mega-sub-link"><i class="fa-solid fa-glass-water"></i> Water Solutions</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 6. Support Dropdown -->
           <li class="nav-item-dropdown">
             <a href="#faq" class="nav-link">
               Support <i class="fa-solid fa-chevron-down nav-arrow"></i>
             </a>
-            <div class="mega-dropdown" style="width: 380px;">
+            <div class="mega-dropdown" style="width: 320px;">
               <div class="mega-dropdown-header">
                 <i class="fa-solid fa-headset" style="color: var(--primary-blue);"></i>
                 <span>Support Options</span>
               </div>
               <div class="mega-dropdown-grid" style="grid-template-columns: 1fr;">
-                <a href="#faq" class="mega-sub-link"><i class="fa-solid fa-circle-question"></i> 1. FAQs</a>
-                <a href="#contact" class="mega-sub-link"><i class="fa-solid fa-envelope"></i> 2. Contact Us</a>
-                <a href="#" onclick="app.showSupportModal('Warranty')" class="mega-sub-link"><i class="fa-solid fa-shield"></i> 3. Warranty</a>
-                <a href="#" onclick="app.showSupportModal('Repairs')" class="mega-sub-link"><i class="fa-solid fa-wrench"></i> 4. Repairs</a>
-                <a href="#" onclick="app.showSupportModal('Manuals')" class="mega-sub-link"><i class="fa-solid fa-file-pdf"></i> 5. Manuals</a>
-                <a href="#faq" class="mega-sub-link"><i class="fa-solid fa-life-ring"></i> 6. Help Center</a>
-                <a href="#" onclick="app.showSupportModal('Track Order')" class="mega-sub-link"><i class="fa-solid fa-truck"></i> 7. Track Order</a>
-                <a href="#" onclick="app.showSupportModal('Product Registration')" class="mega-sub-link"><i class="fa-solid fa-barcode"></i> 8. Product Registration</a>
-              </div>
-            </div>
-          </li>
-
-          <!-- 5. Cart Dropdown -->
-          <li class="nav-item-dropdown">
-            <a href="#" onclick="app.openCartDrawer()" class="nav-link">
-              Cart <i class="fa-solid fa-chevron-down nav-arrow"></i>
-            </a>
-            <div class="mega-dropdown" style="width: 360px;">
-              <div class="mega-dropdown-header">
-                <i class="fa-solid fa-cart-shopping" style="color: var(--primary-blue);"></i>
-                <span>Cart & Orders</span>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns: 1fr;">
-                <a href="#" onclick="app.openCartDrawer()" class="mega-sub-link"><i class="fa-solid fa-box"></i> 1. Orders</a>
-                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-heart"></i> 2. Wishlist</a>
-                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-location-dot"></i> 3. Addresses</a>
-                <a href="#" onclick="app.openCartDrawer()" class="mega-sub-link"><i class="fa-solid fa-credit-card"></i> 4. Payments</a>
-                <a href="#" onclick="app.openCartDrawer()" class="mega-sub-link"><i class="fa-solid fa-ticket"></i> 5. Promo Codes</a>
-                <a href="#" onclick="app.openCartDrawer()" class="mega-sub-link"><i class="fa-solid fa-receipt"></i> 6. Order Summary</a>
-                <a href="#" onclick="app.showSupportModal('Track Order')" class="mega-sub-link"><i class="fa-solid fa-truck-fast"></i> 7. Track Order</a>
-                <a href="#" onclick="app.showSupportModal('Returns & Refunds')" class="mega-sub-link"><i class="fa-solid fa-rotate-left"></i> 8. Returns & Refunds</a>
-              </div>
-            </div>
-          </li>
-
-          <!-- 6. Profile Dropdown -->
-          <li class="nav-item-dropdown">
-            <a href="#" onclick="app.openProfileModal()" class="nav-link">
-              Profile <i class="fa-solid fa-chevron-down nav-arrow"></i>
-            </a>
-            <div class="mega-dropdown" style="width: 360px;">
-              <div class="mega-dropdown-header">
-                <i class="fa-solid fa-user-circle" style="color: var(--primary-blue);"></i>
-                <span>User Account & Profile</span>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns: 1fr;">
-                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-bag-shopping"></i> 1. Orders</a>
-                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-heart"></i> 2. Wishlist</a>
-                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-map-location-dot"></i> 3. Addresses</a>
-                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-gear"></i> 4. Settings</a>
-                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-address-card"></i> 5. Account Details</a>
-                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-bell"></i> 6. Notifications</a>
-                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-credit-card"></i> 7. Saved Cards</a>
-                <a href="#" onclick="app.openProfileModal()" class="mega-sub-link"><i class="fa-solid fa-right-from-bracket"></i> 8. Logout</a>
+                <a href="#faq" class="mega-sub-link"><i class="fa-solid fa-circle-question"></i> FAQs & Help Center</a>
+                <a href="#contact" class="mega-sub-link"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+                <a href="#" onclick="app.showSupportModal('Warranty')" class="mega-sub-link"><i class="fa-solid fa-shield"></i> Doorstep Warranty</a>
+                <a href="#" onclick="app.showSupportModal('Repairs')" class="mega-sub-link"><i class="fa-solid fa-wrench"></i> Repairs & Service</a>
+                <a href="#" onclick="app.showSupportModal('Manuals')" class="mega-sub-link"><i class="fa-solid fa-file-pdf"></i> Product Manuals</a>
+                <a href="#" onclick="app.showSupportModal('Track Order')" class="mega-sub-link"><i class="fa-solid fa-truck"></i> Track Order</a>
+                <a href="#" onclick="app.showSupportModal('Product Registration')" class="mega-sub-link"><i class="fa-solid fa-barcode"></i> Product Registration</a>
               </div>
             </div>
           </li>
@@ -200,12 +186,12 @@
         <i class="fa-solid fa-xmark"></i>
       </button>
       <ul class="mobile-nav-links">
-        <li><a href="#bestsellers" class="mobile-nav-link" onclick="app.setParentCategoryFilter('Home Appliances')"><i class="fa-solid fa-house"></i> 1. Home Appliances</a></li>
-        <li><a href="#bestsellers" class="mobile-nav-link" onclick="app.setParentCategoryFilter('Healthcare')"><i class="fa-solid fa-heart-pulse"></i> 2. Healthcare</a></li>
-        <li><a href="#bestsellers" class="mobile-nav-link" onclick="app.setParentCategoryFilter('Personal Care')"><i class="fa-solid fa-user-tie"></i> 3. Personal Care</a></li>
-        <li><a href="#faq" class="mobile-nav-link"><i class="fa-solid fa-headset"></i> 4. Support</a></li>
-        <li><a href="#" class="mobile-nav-link" onclick="app.openCartDrawer()"><i class="fa-solid fa-cart-shopping"></i> 5. Cart</a></li>
-        <li><a href="#" class="mobile-nav-link" onclick="app.openProfileModal()"><i class="fa-solid fa-user"></i> 6. Profile</a></li>
+        <li><a href="#home" class="mobile-nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#bestsellers" class="mobile-nav-link" onclick="app.setParentCategoryFilter('Healthcare')"><i class="fa-solid fa-heart-pulse"></i> Healthcare</a></li>
+        <li><a href="#bestsellers" class="mobile-nav-link" onclick="app.setParentCategoryFilter('Personal Care')"><i class="fa-solid fa-user-tie"></i> Personal Care</a></li>
+        <li><a href="#bestsellers" class="mobile-nav-link" onclick="app.setParentCategoryFilter('Mother & Baby')"><i class="fa-solid fa-baby"></i> Mother & Baby</a></li>
+        <li><a href="#bestsellers" class="mobile-nav-link" onclick="app.setParentCategoryFilter('Home Appliances')"><i class="fa-solid fa-house-laptop"></i> Home Appliances</a></li>
+        <li><a href="#faq" class="mobile-nav-link"><i class="fa-solid fa-headset"></i> Support</a></li>
       </ul>
     </div>
   </div>

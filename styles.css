@@ -221,7 +221,7 @@ img {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 1.75rem;
+  gap: 1.35rem;
 }
 
 .nav-link {
