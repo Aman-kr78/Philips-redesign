@@ -219,29 +219,30 @@ img {
   align-items: center;
   justify-content: center;
   list-style: none;
-  gap: 1.85rem;
+  gap: 2.25rem;
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
 .nav-link {
+  font-family: 'Outfit', 'Nunito Sans', sans-serif;
   font-size: 0.98rem;
-  font-weight: 600;
-  color: var(--text-dark);
+  font-weight: 700;
+  color: #071B3D;
   position: relative;
   padding: 0.5rem 0.5rem;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  letter-spacing: 0.15px;
+  letter-spacing: 0.2px;
   white-space: nowrap;
   line-height: 1;
   transition: color 0.2s ease;
 }
 
 .nav-link:hover, .nav-link.active {
-  color: var(--primary-blue);
+  color: #0057B8;
 }
 
 /* Information Architecture Mega Dropdown Panel */
@@ -253,12 +254,17 @@ img {
 }
 
 .nav-arrow {
-  font-size: 0.72rem;
-  margin-left: 0.25rem;
+  font-size: 0.75rem;
+  color: #071B3D;
+  margin-left: 0.3rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover .nav-arrow {
+  color: #0057B8;
 }
 
 .nav-item-dropdown:hover .nav-arrow {
