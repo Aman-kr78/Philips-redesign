@@ -227,8 +227,8 @@ img {
 
 .nav-link {
   font-family: 'Outfit', 'Nunito Sans', sans-serif;
-  font-size: 1rem;
-  font-weight: 800;
+  font-size: 0.96rem;
+  font-weight: 500;
   color: #002D62;
   position: relative;
   padding: 0.5rem 0.5rem;
@@ -254,10 +254,10 @@ img {
 }
 
 .nav-arrow {
-  font-size: 0.8rem;
-  font-weight: 800;
+  font-size: 0.75rem;
+  font-weight: 500;
   color: #002D62;
-  margin-left: 0.35rem;
+  margin-left: 0.3rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
