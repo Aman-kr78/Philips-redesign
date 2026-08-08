@@ -226,10 +226,10 @@ img {
 }
 
 .nav-link {
-  font-family: 'Outfit', 'Nunito Sans', sans-serif;
-  font-size: 0.96rem;
-  font-weight: 500;
-  color: #002D62;
+  font-family: 'Outfit', 'Nunito Sans', sans-serif !important;
+  font-size: 0.96rem !important;
+  font-weight: 500 !important;
+  color: #002D62 !important;
   position: relative;
   padding: 0.5rem 0.5rem;
   display: inline-flex;
@@ -242,7 +242,7 @@ img {
 }
 
 .nav-link:hover, .nav-link.active {
-  color: #0057B8;
+  color: #0057B8 !important;
 }
 
 /* Information Architecture Mega Dropdown Panel */
@@ -254,9 +254,9 @@ img {
 }
 
 .nav-arrow {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #002D62;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  color: #002D62 !important;
   margin-left: 0.3rem;
   display: inline-flex;
   align-items: center;
